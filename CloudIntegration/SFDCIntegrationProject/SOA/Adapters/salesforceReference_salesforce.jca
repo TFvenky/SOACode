@@ -1,0 +1,20 @@
+<adapter-config name="salesforceReferencePortType" adapter="salesforce" wsdlLocation="../WSDLs/salesforceReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.salesforce.SalesforceConnectionFactory">
+      <property name="targetWSDLURL" value="../WSDLs/enterprise_1.wsdl"/>
+      <property name="csfkey" value="CRI_SFDC"/>
+      <property name="csfMap" value="SOA" encoded-credential="false"/>
+      <property name="applicationVersion" value="40.0"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="salesforceReferencePortType" operation="query">
+    <interaction-spec className="oracle.tip.adapter.cloud.CloudInteractionSpec">
+      <property name="targetOperation" value="query"/>
+      <property name="operationPath" value=""/>
+      <property name="oracle.cloud.rt.sfdcAdapterNamespace" value="http://xmlns.oracle.com/pcbpel/adapter/salesforce/CloudIntegration/SFDCIntegrationProject/salesforceReference#new"/>
+      <property name="selectedObjects" value="Contact"/>
+      <property name="oracle.cloud.rt.queryString" value="select Firstname,lastname,Department From Contact Where firstname='MAR'"/>
+      <property name="oracle.cloud.rt.suppressResponse" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

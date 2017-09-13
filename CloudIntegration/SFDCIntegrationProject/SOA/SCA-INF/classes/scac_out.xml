@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line>77</line>
+      <col/>
+      <file>BPEL/SFDCIntegration.bpel</file>
+      <name>BPEL/SFDCIntegration.bpel</name>
+      <fix>Types must be compatible.</fix>
+      <msg>The from-spec of "xsd:string" is not compatible with to-spec of "ns1:queryType"</msg>
+   </Fault>
+</Faults>
